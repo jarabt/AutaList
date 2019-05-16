@@ -1,0 +1,27 @@
+﻿<Window x:Class="AutaList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutaList"
+        mc:Ignorable="d"
+        Title="AutaList" Height="450" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DataGrid Name="AutaDataGrid"  ColumnWidth="*" ItemsSource="{Binding Auto}" CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Název modelu" Binding="{Binding Model}" />
+                <DataGridTextColumn Header="Datum prodeje" Binding="{Binding Prodano, StringFormat=dd.MM.yyyy}" />
+                <DataGridTextColumn Header="Cena" Binding="{Binding Cena, ConverterCulture=cs-CZ, StringFormat=N}" />
+                <DataGridTextColumn Header="DPH" Binding="{Binding DPH}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button Margin="20,0,0,0" Name="Nacist" Click="Nacist_Click" HorizontalAlignment="Left"  Width="120" Height="25" Grid.Row="2" Content="Načíst soubor"></Button>
+        <Button Margin="0,0,20,0" Name="Vypocet" Click="Vypocet_Click" HorizontalAlignment="Right" Width="120" Height="25" Grid.Row="2" Content="Prodej o víkendu"></Button>
+    </Grid>
+</Window>
