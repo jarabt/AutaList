@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutaList.Bootstrap;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,10 @@ namespace AutaList
     /// </summary>
     public partial class App : Application
     {
+        protected async override void OnStartup(StartupEventArgs e)
+        {
+            IAppIoCContainerBuilderFactory appIoCContainerBuilderFactory = new AppIoCContainerBuilderFactory();
+            IoC.Configure(appIoCContainerBuilderFactory);
+        }
     }
 }
