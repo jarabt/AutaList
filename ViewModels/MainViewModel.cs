@@ -30,19 +30,6 @@ namespace AutaList.ViewModels
 
 
 
-        private string testing = "Original";
-
-        public string Testing
-        {
-            get { return testing; }
-            set 
-            { 
-                testing = value;
-                NotifyPropertyChanged(nameof(Testing));
-            }
-        }
-
-
 
 
         public MainViewModel(AppModel model) : base(model)
@@ -66,7 +53,6 @@ namespace AutaList.ViewModels
         private void LoadTableCommand_TableLoaded()
         {
             this.Auta = new ObservableCollection<Auto>(this.Model.AutaZakladni);
-            this.Testing = "Updated";
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
