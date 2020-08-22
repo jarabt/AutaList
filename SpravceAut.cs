@@ -97,6 +97,12 @@ namespace AutaList
             Vysledky = new ObservableCollection<PolozkaVysledku>(vysledkyList);
         }
 
+        public IList<Auto> GetList()
+        {
+            return autaZakladni;
+        }
+
+
     }
 
 }

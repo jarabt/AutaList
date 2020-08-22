@@ -21,7 +21,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button  Command="{Binding LoadTableCommand}" Margin="20,0,0,0" Name="Nacist" Click="Nacist_Click" HorizontalAlignment="Left"  Width="120" Height="25" Grid.Row="2" Content="Načíst soubor"></Button>
+        <Button  Content="{Binding Testing}"     Command="{Binding LoadTableCommand}" Margin="20,0,0,0" Name="Nacist" Click="Nacist_Click" HorizontalAlignment="Left"  Width="120" Height="25" Grid.Row="2"></Button>
         <Button Margin="0,0,20,0" Name="Vypocet" Click="Vypocet_Click" HorizontalAlignment="Right" Width="120" Height="25" Grid.Row="2" Content="Prodej o víkendu"></Button>
     </Grid>
 </Window>

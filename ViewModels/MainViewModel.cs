@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace AutaList.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainViewModel : BaseViewModel, INotifyPropertyChanged
     {
 
 
@@ -22,11 +22,25 @@ namespace AutaList.ViewModels
             set 
             { 
                 auta = value;
-                NotifyPropertyChanged("Auta");
+                NotifyPropertyChanged(nameof(Auta));
             }
         }
 
-        public LoadTableCommand LoadTableCommand { get; set; } = new LoadTableCommand();
+        public LoadTableCommand LoadTableCommand { get; set; }
+
+
+
+        private string testing = "Original";
+
+        public string Testing
+        {
+            get { return testing; }
+            set 
+            { 
+                testing = value;
+                NotifyPropertyChanged(nameof(Testing));
+            }
+        }
 
 
 
@@ -43,13 +57,17 @@ namespace AutaList.ViewModels
             this.Auta = new ObservableCollection<Auto>();
             this.Auta.Add(auto);
 
+
+            this.LoadTableCommand  = new LoadTableCommand(model);
+            this.LoadTableCommand.TableLoaded += LoadTableCommand_TableLoaded;
+
         }
 
-
-
-
-
-
+        private void LoadTableCommand_TableLoaded()
+        {
+            this.Auta = new ObservableCollection<Auto>(this.Model.AutaZakladni);
+            this.Testing = "Updated";
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

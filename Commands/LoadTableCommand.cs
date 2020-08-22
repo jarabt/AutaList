@@ -9,7 +9,8 @@ namespace AutaList.Commands
 {
     public class LoadTableCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+        public AppModel Model { get; set; }
+        public delegate void Notify();
 
         public bool CanExecute(object parameter)
         {
@@ -20,10 +21,24 @@ namespace AutaList.Commands
         {
             SpravceAut spravceAut = new SpravceAut();
             spravceAut.Nacti();
+            this.Model.AutaZakladni = spravceAut.GetList();
+            OnTableLoaded();
+            
         }
 
+        public LoadTableCommand(AppModel model)
+        {
+            this.Model = model;
 
+        }
 
+        private void OnTableLoaded()
+        {
+            TableLoaded?.Invoke();
+        }
+
+        public event EventHandler CanExecuteChanged;
+        public event Notify TableLoaded;
 
     }
 }
