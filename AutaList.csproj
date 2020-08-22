@@ -72,6 +72,7 @@
     <Compile Include="Bootstrap\AppIoCContainerBuilderFactory.cs" />
     <Compile Include="Bootstrap\IAppIoCContainerBuilderFactory.cs" />
     <Compile Include="Bootstrap\IoC.cs" />
+    <Compile Include="Commands\LoadTableCommand.cs" />
     <Compile Include="SpravceAut.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

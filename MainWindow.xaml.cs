@@ -39,7 +39,7 @@ namespace AutaList
         private void Nacist_Click(object sender, RoutedEventArgs e)
         {
 
-            spravceAut.Nacti();
+           // spravceAut.Nacti();
             // AutaDataGrid.ItemsSource = spravceAut.Auta;
             // mainViewModel.Auta = spravceAut.Auta;
             //AutaDataGrid.ItemsSource = mainViewModel.Auta;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutaList.Commands;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -24,6 +25,8 @@ namespace AutaList.ViewModels
                 NotifyPropertyChanged("Auta");
             }
         }
+
+        public LoadTableCommand LoadTableCommand { get; set; } = new LoadTableCommand();
 
 
 
