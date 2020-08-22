@@ -12,7 +12,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <DataGrid Name="AutaDataGrid"  ColumnWidth="*" ItemsSource="{Binding Auto}" CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Name="AutaDataGrid"  ColumnWidth="*"  ItemsSource="{Binding Auta}"  CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Název modelu" Binding="{Binding Model}" />
                 <DataGridTextColumn Header="Datum prodeje" Binding="{Binding Prodano, StringFormat=dd.MM.yyyy}" />

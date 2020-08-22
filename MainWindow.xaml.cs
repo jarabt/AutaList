@@ -29,7 +29,6 @@ namespace AutaList
 
         public MainWindow()
         {
-            
             MainViewModel mainViewModel = IoC.Resolve<MainViewModel>();
             this.DataContext = mainViewModel;
             InitializeComponent();
@@ -41,8 +40,9 @@ namespace AutaList
         {
 
             spravceAut.Nacti();
-            InitializeComponent();
-            AutaDataGrid.ItemsSource = spravceAut.Auta;
+            // AutaDataGrid.ItemsSource = spravceAut.Auta;
+            // mainViewModel.Auta = spravceAut.Auta;
+            //AutaDataGrid.ItemsSource = mainViewModel.Auta;
 
         }
 

@@ -8,6 +8,10 @@ namespace AutaList
 {
     public class AppModel
     {
+        public IList<Auto> AutaZakladni{ get; set; } = new List<Auto>();
 
+        public AppModel()
+        {
+        }
     }
 }
