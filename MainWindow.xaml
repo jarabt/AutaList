@@ -8,11 +8,23 @@
         Title="AutaList" Height="450" Width="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="350"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="10"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="10"></ColumnDefinition>
 
-        <DataGrid Name="AutaDataGrid"  ColumnWidth="*"  ItemsSource="{Binding Auta}"  CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False">
+
+
+        </Grid.ColumnDefinitions>
+        
+
+        <DataGrid Name="AutaDataGrid"  Grid.Row="1" Grid.Column="1" ColumnWidth="*"  ItemsSource="{Binding Auta}"  CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Název modelu" Binding="{Binding Model}" />
                 <DataGridTextColumn Header="Datum prodeje" Binding="{Binding Prodano, StringFormat=dd.MM.yyyy}" />
@@ -21,8 +33,22 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button  Content="Načti tabulku" Command="{Binding LoadTableCommand}" Margin="20,0,0,0" Name="Nacist" Click="Nacist_Click" HorizontalAlignment="Left"  Width="120" Height="25" Grid.Row="2"></Button>
-        <Button Content="Prodej o víkendu" Command="{Binding ShowWeekendSaleCommand}" Margin="0,0,20,0" Name="Vypocet" Click="Vypocet_Click" HorizontalAlignment="Right" Width="120" Height="25" Grid.Row="2"></Button>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="10"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button  Content="Načti tabulku" Command="{Binding LoadTableCommand}"  Grid.Column="1"  Margin="20,0,0,0" Name="Nacist" Click="Nacist_Click" HorizontalAlignment="Left"  Width="120" Height="25"></Button>
+            <Button Content="Prodej o víkendu" Command="{Binding ShowWeekendSaleCommand}"  Grid.Column="5"  Margin="0,0,20,0" Name="Vypocet" Click="Vypocet_Click" HorizontalAlignment="Right" Width="120" Height="25" ></Button>
+
+
+        </Grid>
+
         
     </Grid>
 </Window>
