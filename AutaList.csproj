@@ -73,9 +73,11 @@
     <Compile Include="Bootstrap\IAppIoCContainerBuilderFactory.cs" />
     <Compile Include="Bootstrap\IoC.cs" />
     <Compile Include="Commands\LoadTableCommand.cs" />
+    <Compile Include="Commands\ShowWeekdaysSaleCommand.cs" />
     <Compile Include="Commands\ShowWeekendSaleCommand.cs" />
     <Compile Include="SpravceAut.cs" />
     <Compile Include="Utils\BaseListMaker.cs" />
+    <Compile Include="Utils\WeekdaysSaleListMaker.cs" />
     <Compile Include="Utils\WeekendSaleListMaker.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

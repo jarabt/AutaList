@@ -22,49 +22,11 @@ namespace AutaList
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        private SpravceAut spravceAut = new SpravceAut();
-
-
-
         public MainWindow()
         {
             MainViewModel mainViewModel = IoC.Resolve<MainViewModel>();
             this.DataContext = mainViewModel;
             InitializeComponent();
-        }
-
-
-
-        private void Nacist_Click(object sender, RoutedEventArgs e)
-        {
-
-           // spravceAut.Nacti();
-            // AutaDataGrid.ItemsSource = spravceAut.Auta;
-            // mainViewModel.Auta = spravceAut.Auta;
-            //AutaDataGrid.ItemsSource = mainViewModel.Auta;
-
-        }
-
-
-
-        private void Vypocet_Click(object sender, RoutedEventArgs e)
-        {
-
-            //// vyjímka pro výpočet bez načteného souboru
-            //try
-            //{
-            //    spravceAut.Vypocti();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Chyba - prosím načtěte .xml soubor.", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            //    return;
-            //}
-
-            //VysledneWindow vysledneWindow = new VysledneWindow(spravceAut);
-            //vysledneWindow.ShowDialog();
-
         }
 
     }

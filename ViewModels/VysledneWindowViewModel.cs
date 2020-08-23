@@ -12,6 +12,8 @@ namespace AutaList.ViewModels
     {
 
         private ObservableCollection<PolozkaVysledku> vysledky;
+        private string title;
+
         public ObservableCollection<PolozkaVysledku> Vysledky
         {
             get { return vysledky; }
@@ -21,6 +23,20 @@ namespace AutaList.ViewModels
                 NotifyPropertyChanged(nameof(Vysledky));
             }
         }
+
+        public string Title
+        {
+            get { return title; }
+            set
+            { 
+                title = value;
+                NotifyPropertyChanged(nameof(Title));
+            }
+        }
+
+
+
+
 
         public VysledneWindowViewModel(AppModel model) : base(model)
         {

@@ -11,9 +11,10 @@ using System.Windows.Input;
 
 namespace AutaList.Commands
 {
-    public class ShowWeekendSaleCommand : ICommand
+    public class ShowWeekdaysSaleCommand : ICommand
     {
         public AppModel Model { get; set; }
+
 
         public bool CanExecute(object parameter)
         {
@@ -22,27 +23,25 @@ namespace AutaList.Commands
 
         public void Execute(object parameter)
         {
-            WeekendSaleListMaker weekendSaleListMaker = new WeekendSaleListMaker();
+            WeekdaysSaleListMaker weekdaysSaleListMaker = new WeekdaysSaleListMaker();
 
-            if (weekendSaleListMaker.GetList(this.Model.AutaZakladni))
+            if (weekdaysSaleListMaker.GetList(this.Model.AutaZakladni))
             {
                 VysledneWindow vysledneWindow = new VysledneWindow();
                 VysledneWindowViewModel vysledneWindowViewModel = IoC.Resolve<VysledneWindowViewModel>();
-                vysledneWindowViewModel.Vysledky = new ObservableCollection<PolozkaVysledku>(weekendSaleListMaker.VysledkyList);
-                vysledneWindowViewModel.Title = "Víkendy";
+                vysledneWindowViewModel.Vysledky = new ObservableCollection<PolozkaVysledku>(weekdaysSaleListMaker.VysledkyList);
+                vysledneWindowViewModel.Title = "Všední dny";
                 vysledneWindow.DataContext = vysledneWindowViewModel;
                 vysledneWindow.ShowDialog();
-                
+
             }
         }
 
-
-
-        public ShowWeekendSaleCommand(AppModel appModel)
+        public ShowWeekdaysSaleCommand(AppModel model)
         {
-            this.Model = appModel;
-            
+            this.Model = model;
         }
+
 
 
         public event EventHandler CanExecuteChanged;

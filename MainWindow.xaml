@@ -43,8 +43,9 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="10"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button  Content="Načti tabulku" Command="{Binding LoadTableCommand}"  Grid.Column="1"  Margin="20,0,0,0" Name="Nacist" Click="Nacist_Click" HorizontalAlignment="Left"  Width="120" Height="25"></Button>
-            <Button Content="Prodej o víkendu" Command="{Binding ShowWeekendSaleCommand}"  Grid.Column="5"  Margin="0,0,20,0" Name="Vypocet" Click="Vypocet_Click" HorizontalAlignment="Right" Width="120" Height="25" ></Button>
+            <Button  Content="Načti tabulku" Command="{Binding LoadTableCommand}"  Grid.Column="1"  Name="Nacist" HorizontalAlignment="Left"  Width="120" Height="25"></Button>
+            <Button Content="Prodej ve všední dny" Command="{Binding ShowWeekdaysSaleCommand}"  Grid.Column="3" HorizontalAlignment="Right" Width="120" Height="25" ></Button>
+            <Button Content="Prodej o víkendu" Command="{Binding ShowWeekendSaleCommand}"  Grid.Column="5"  HorizontalAlignment="Right" Width="120" Height="25" ></Button>
 
 
         </Grid>
