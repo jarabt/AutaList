@@ -24,7 +24,7 @@
         </Grid.ColumnDefinitions>
         
 
-        <DataGrid Name="AutaDataGrid"  Grid.Row="1" Grid.Column="1" ColumnWidth="*"  ItemsSource="{Binding Auta}"  CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Name="AutaDataGrid"  Grid.Row="1" Grid.Column="1" ColumnWidth="*"  ItemsSource="{Binding Auta}"  CanUserSortColumns="True" CanUserResizeRows="True" CanUserResizeColumns="True" CanUserAddRows="True" SelectionUnit="FullRow" SelectionMode="Single" AutoGenerateColumns="False" IsReadOnly="True" >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Název modelu" Binding="{Binding Model}" />
                 <DataGridTextColumn Header="Datum prodeje" Binding="{Binding Prodano, StringFormat=dd.MM.yyyy}" />
