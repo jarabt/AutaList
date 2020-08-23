@@ -51,19 +51,19 @@ namespace AutaList
         private void Vypocet_Click(object sender, RoutedEventArgs e)
         {
 
-            // vyjímka pro výpočet bez načteného souboru
-            try
-            {
-                spravceAut.Vypocti();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Chyba - prosím načtěte .xml soubor.", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                return;
-            }
+            //// vyjímka pro výpočet bez načteného souboru
+            //try
+            //{
+            //    spravceAut.Vypocti();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Chyba - prosím načtěte .xml soubor.", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            //    return;
+            //}
 
-            VysledneWindow vysledneWindow = new VysledneWindow(spravceAut);
-            vysledneWindow.ShowDialog();
+            //VysledneWindow vysledneWindow = new VysledneWindow(spravceAut);
+            //vysledneWindow.ShowDialog();
 
         }
 

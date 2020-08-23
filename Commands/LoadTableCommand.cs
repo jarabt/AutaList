@@ -56,21 +56,16 @@ namespace AutaList.Commands
 
             if (auta != null)
             {
-                this.Model.AutaZakladni = new BaseListMaker().GetList(auta);
+                BaseListMaker baseListMaker = new BaseListMaker();
+                if (baseListMaker.GetList(auta))
+                    this.Model.AutaZakladni = baseListMaker.AutaZakladni;
                 OnTableLoaded();
             }
-
-            //SpravceAut spravceAut = new SpravceAut();
-            //spravceAut.Nacti();
-            //this.Model.AutaZakladni = spravceAut.GetBaseList();
-            //OnTableLoaded();
-
         }
 
         public LoadTableCommand(AppModel model)
         {
             this.Model = model;
-
         }
 
         private void OnTableLoaded()

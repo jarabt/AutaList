@@ -27,6 +27,7 @@ namespace AutaList.ViewModels
         }
 
         public LoadTableCommand LoadTableCommand { get; set; }
+        public ShowWeekendSaleCommand ShowWeekendSaleCommand { get; set; }
 
 
 
@@ -47,6 +48,7 @@ namespace AutaList.ViewModels
 
             this.LoadTableCommand  = new LoadTableCommand(model);
             this.LoadTableCommand.TableLoaded += LoadTableCommand_TableLoaded;
+            this.ShowWeekendSaleCommand = new ShowWeekendSaleCommand(model);
 
         }
 

@@ -10,13 +10,13 @@ namespace AutaList.Utils
 {
     public class BaseListMaker
     {
-        private IList<Auto> autaZakladni;
-        public IList<Auto> GetList(XDocument auta)
+        public IList<Auto> AutaZakladni { get; set; }
+        public bool GetList(XDocument auta)
         {
            
 
                 // převod xml souboru do listu pro zobrazení základní tabulky
-                autaZakladni = auta.Root.Descendants("auto")
+                AutaZakladni = auta.Root.Descendants("auto")
                     .Select(p => new Auto
                     {
                         Model = p.Attribute("model").Value,
@@ -26,20 +26,20 @@ namespace AutaList.Utils
 
                     }).ToList();
 
-                foreach (Auto a in autaZakladni)
+                foreach (Auto a in AutaZakladni)
                 {
                     a.CenaSDPH = (a.Cena + a.Cena * (a.DPH / 100));
                 }
 
                 // chybové hlášení pro načtení špatného nebo poškozeného xml souboru 
-                bool isEmpty = !autaZakladni.Any();
+                bool isEmpty = !AutaZakladni.Any();
                 if (isEmpty)
                 {
                     MessageBox.Show("Zdrojový list je prázdný", "Chyba - .xml soubor není pravděpodobně správný (v pořádku).", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                    //return;
+                return false;
                 }
 
-            return autaZakladni;
+            return true;
             
         }
             
