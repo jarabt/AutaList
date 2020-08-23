@@ -37,10 +37,6 @@ namespace AutaList.Commands
                 vysledneWindow.ShowDialog();
                 
             }
-                
-
-
-
         }
 
 

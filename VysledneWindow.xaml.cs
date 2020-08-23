@@ -22,21 +22,11 @@ namespace AutaList
     public partial class VysledneWindow : Window
     {
 
-        private SpravceAut spravceAut;
 
         public VysledneWindow()
         {
-            //VysledneWindowViewModel vysledneWindowViewModel = IoC.Resolve<VysledneWindowViewModel>();
-            //this.DataContext = vysledneWindowViewModel;
             InitializeComponent();
         }
-
-        //public VysledneWindow(SpravceAut spravceAut)
-        //{
-        //    InitializeComponent();
-        //    this.spravceAut = spravceAut;
-        //    VysledkyDataGrid.ItemsSource = spravceAut.Vysledky;
-        //}
 
     }
 }
