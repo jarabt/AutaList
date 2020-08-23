@@ -43,9 +43,22 @@
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="10"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button  Content="Načti tabulku" Command="{Binding LoadTableCommand}"  Grid.Column="1"  Name="Nacist" HorizontalAlignment="Left"  Width="120" Height="25"></Button>
-            <Button Content="Prodej ve všední dny" Command="{Binding ShowWeekdaysSaleCommand}"  Grid.Column="3" HorizontalAlignment="Right" Width="120" Height="25" ></Button>
-            <Button Content="Prodej o víkendu" Command="{Binding ShowWeekendSaleCommand}"  Grid.Column="5"  HorizontalAlignment="Right" Width="120" Height="25" ></Button>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="10"></RowDefinition>
+            </Grid.RowDefinitions>
+
+
+
+
+            <Button  Content="Načti tabulku" Command="{Binding LoadTableCommand}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"  Width="120" Height="25"></Button>
+            <Button  Content="Přidej auto" Command="{Binding LoadTableCommand}" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left"  Width="120" Height="25"></Button>
+
+            <Button Content="Prodej ve všední dny" Command="{Binding ShowWeekdaysSaleCommand}" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right" Width="120" Height="25" ></Button>
+            <Button Content="Prodej o víkendu" Command="{Binding ShowWeekendSaleCommand}"  Grid.Row="3"  Grid.Column="5"  HorizontalAlignment="Right" Width="120" Height="25" ></Button>
 
 
         </Grid>
