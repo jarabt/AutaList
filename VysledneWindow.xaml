@@ -17,7 +17,7 @@
         <TextBlock Text="Cena bez DPH       Cena s DPH" Margin="17,0,0,0"  HorizontalAlignment="Left" Grid.Row="1"  />
         <Viewbox  Grid.Row="2" Stretch="Fill">
 
-            <DataGrid x:Name="VysledkyDataGrid" RowDetailsVisibilityMode="Visible" ColumnWidth="*" ItemsSource="{Binding PolozkaVysledku}" CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False" Height="319" Width="392">
+            <DataGrid x:Name="VysledkyDataGrid" ItemsSource="{Binding Vysledky}"  RowDetailsVisibilityMode="Visible" ColumnWidth="*" CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False" Height="319" Width="392">
                 <DataGrid.Columns>
 
 

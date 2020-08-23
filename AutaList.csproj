@@ -79,6 +79,7 @@
     <Compile Include="Utils\WeekendSaleListMaker.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\VysledneWindowViewModel.cs" />
     <Compile Include="VysledneWindow.xaml.cs">
       <DependentUpon>VysledneWindow.xaml</DependentUpon>
     </Compile>

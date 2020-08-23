@@ -1,4 +1,6 @@
-﻿using AutaList.Utils;
+﻿using AutaList.Bootstrap;
+using AutaList.Utils;
+using AutaList.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,7 +29,17 @@ namespace AutaList.Commands
         {
             WeekendSaleListMaker weekendSaleListMaker = new WeekendSaleListMaker();
             if (weekendSaleListMaker.GetList(this.Model.AutaZakladni))
-                vysledky = new ObservableCollection<PolozkaVysledku>(weekendSaleListMaker.VysledkyList);
+            {
+                VysledneWindow vysledneWindow = new VysledneWindow();
+                VysledneWindowViewModel vysledneWindowViewModel = IoC.Resolve<VysledneWindowViewModel>();
+                vysledneWindowViewModel.Vysledky = new ObservableCollection<PolozkaVysledku>(weekendSaleListMaker.VysledkyList);
+                vysledneWindow.DataContext = vysledneWindowViewModel;
+                vysledneWindow.ShowDialog();
+                
+            }
+                
+
+
 
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutaList.Bootstrap;
+using AutaList.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,12 +24,19 @@ namespace AutaList
 
         private SpravceAut spravceAut;
 
-        public VysledneWindow(SpravceAut spravceAut)
+        public VysledneWindow()
         {
+            //VysledneWindowViewModel vysledneWindowViewModel = IoC.Resolve<VysledneWindowViewModel>();
+            //this.DataContext = vysledneWindowViewModel;
             InitializeComponent();
-            this.spravceAut = spravceAut;
-            VysledkyDataGrid.ItemsSource = spravceAut.Vysledky;
         }
+
+        //public VysledneWindow(SpravceAut spravceAut)
+        //{
+        //    InitializeComponent();
+        //    this.spravceAut = spravceAut;
+        //    VysledkyDataGrid.ItemsSource = spravceAut.Vysledky;
+        //}
 
     }
 }
